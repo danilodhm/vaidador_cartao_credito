@@ -3,24 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Credit Card Validator</title>
+    <title>Validador de Bandeira de Cartões</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
     <div class="container">
-        <h1>Credit Card Validator</h1>
+        <h1>Validador de Bandeira de Cartões</h1>
         <form method="POST">
-            <label for="card_number">Enter Card Number:</label>
+            <label for="card_number">Número Cartão:</label>
             <input type="text" name="card_number" id="card_number" value="{{ card_number }}" required>
-            <button type="submit">Validate</button>
+            <button type="submit">Validar</button>
         </form>
 
         {% if result is not none %}
-            {% if result %}
-                <p class="valid">The card number is valid! ✅</p>
-            {% else %}
-                <p class="invalid">The card number is invalid! ❌</p>
-            {% endif %}
+            <div>
+                {% if result %}
+                    <p class="valid">O cartão é valido! ✅</p>
+                {% else %}
+                    <p class="invalid">O cartão é invalido! ❌</p>
+                {% endif %}
+                <p>Bandeira do Cartão: <strong>{{ brand }}</strong></p>
+            </div>
         {% endif %}
     </div>
 </body>

@@ -1,0 +1,28 @@
+# Ambientes virtuais
+venv/
+.env/
+
+# Arquivos de configuração locais
+*.env
+*.config
+*.local
+
+# Arquivos de cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Logs
+*.log
+
+# Dependências (caso você já tenha requirements.txt)
+*.egg-info/
+.eggs/
+dist/
+build/
+
+# IDEs e editores
+.vscode/
+.idea/
+*.swp
+.history
